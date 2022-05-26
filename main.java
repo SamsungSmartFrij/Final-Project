@@ -1,11 +1,8 @@
-class main
-{
-  public static void main(String[] args)
-  {
-    System.out.println("Test3");
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Recipe funny = new Recipe();
+    funny.
   }
-
-
-
-
 }
