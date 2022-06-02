@@ -22,9 +22,50 @@ ArrayList<Food> ShoppingList = new ArrayList<Food>();
         switch(option)
           {
               // - - - - - - - - - - - - - - 
-              
+              //first prompts, the type of food
               case 1:
               //Appetizers
+              System.out.println("1 - French Fries\n2 - Breadsticks\n3 - Pigs in a Blanket");
+              int appetizersint = scanner.nextInt();
+              System.out.println("\n");
+              //The sub categories, specify which of that category
+              switch(appetizersint)
+                {
+                  case 1:
+                    //French Fries
+                    System.out.println("INSERT FRENCH FRIES RECIPE");
+                    System.out.println("Do you want to add French Fries to your cart?\n 1 - Yes\n2 - No");
+                    appetizersint = scanner.nextInt();
+                    //add to cart
+                    switch(appetizersint)
+                    {
+                      case 1: 
+                        ShoppingList.add(new Appetizers("French Fries"));
+                        System.out.println("\nFrench Fries have been added to your cart!\n");
+                        break;
+                        
+                      default:
+                        break;
+                    }
+                  break;
+
+                  case 2:
+                    //Breadsticks
+                    System.out.println("Make the dough: Place 1/4 cup warm water in the bowl of a mixer; sprinkle in the yeast and set aside until foamy, about 5 minutes. Add the flour, butter, sugar, fine salt and 1 1/4 cups plus 2 tablespoons warm water; mix with the paddle attachment until a slightly sticky dough forms, 5 minutes.\n Knead the dough by hand on a floured surface until very smooth and soft, 3 minutes. Roll into a 2-foot-long log; cut into 16 1 1/2-inch-long pieces. Knead each piece slightly and shape into a 7-inch-long breadstick; arrange 2 inches apart on a parchment-lined baking sheet. Cover with a cloth; let rise in a warm spot until almost doubled, about 45 minutes.\n Preheat the oven to 400 degrees F. Make the topping: Brush the breadsticks with 1 1/2 tablespoons of the butter and sprinkle with 1/4 teaspoon kosher salt. Bake until lightly golden, about 15 minutes. Meanwhile, combine the remaining 1/4 teaspoon salt with the garlic powder and oregano. Brush the warm breadsticks with the remaining 1 1/2 tablespoons melted butter and sprinkle with the flavored salt.");
+                    System.out.println("Do you want to add Breadsticks to your cart?\n 1 - Yes\n2 - No");
+                    appetizersint = scanner.nextInt();
+                    //add to cart
+                    switch(appetizersint)
+                    {
+                      case 1: 
+                        ShoppingList.add(new Appetizers("Breadsticks"));
+                        System.out.println("\nBreadsticks have been added to your cart!\n");
+                        break;
+                        
+                      default:
+                        break;
+                    }
+                }
               break;
               
               // - - - - - - - - - - - - - - 
@@ -57,17 +98,7 @@ ArrayList<Food> ShoppingList = new ArrayList<Food>();
 
                 case 2:
                   //Juice
-                  System.out.println("Start by washing and then coring the apple to remove seeds. Cut the apples into slices. There is no need to peel the apples.\n
-
-Add the apples to the pot and add enough water to just cover them. Too much water and you’ll have pretty diluted juice. This juice may come out a bit strong, but it’s a lot easier to dilute the juice with extra water rather than trying to make the flavor stronger.\n
-
-Slowly boil the apples for about 20-25 minutes or until the apples are quite soft. Place a coffee filter or piece of cheesecloth in your fine mesh strainer and place over a bowl.\n
-
-Slowly ladle the hot juice/apple mixture into a fine mesh strainer and gently mash the apples. The juice will be filtered through the bottom into your bowl while the apple mush will be left behind. Place the mush in a separate bowl for later. Repeat this process until all of your juice is in the bowl.\n
-
-Taste the juice after it’s cooled for a bit. You can add additional sugar or cinnamon depending on your preferences. Again, if the flavor is too strong, you can add water a little bit at a time to weaken the flavor.\n
-
-The apple mush you collected can easily be turned into applesauce by pureeing and adding a smidgen of sugar and cinnamon to taste.");
+                  
                   break;
               }
               break;
@@ -166,9 +197,10 @@ The apple mush you collected can easily be turned into applesauce by pureeing an
               
           }
       }while(option != 0);
+    System.out.print("Shopping Cart: " );
     for(int i = 0; i < ShoppingList.size(); i++)
       {
-        System.out.print(ShoppingList.get(i).getName() + " ");
+        System.out.print(ShoppingList.get(i).getName() + ", ");
       }
 
 
